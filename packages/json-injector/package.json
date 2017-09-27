@@ -1,0 +1,13 @@
+{
+  "name": "json-injector",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/kimxogus/json-injector.git",
+  "author": "kimxogus <kgyoo8232@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "yargs": "^9.0.1"
+  }
+}

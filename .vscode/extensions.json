@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.editorconfig",
+    "RobinMalfait.prettier-eslint-vscode",
+    "esbenp.prettier-vscode"
+  ]
+}
