@@ -6,8 +6,32 @@
   "author": "kimxogus <kgyoo8232@gmail.com>",
   "license": "MIT",
   "private": false,
+  "bin": {
+    "json-injector": "./dist/bin/json-injector.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
+    "ajv": "^5.2.3",
+    "ajv-keywords": "^2.1.0",
     "fs-extra": "^4.0.2",
+    "lodash": "^4.17.4",
     "yargs": "^9.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "json"],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "moduleDirectories": ["src"],
+    "testPathIgnorePatterns": [
+      "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
+    ]
   }
 }

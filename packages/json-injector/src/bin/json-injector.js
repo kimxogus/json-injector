@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 import yargs from 'yargs';
 
-const { _: files, suffix } = yargs.option('suffix', {
-  alias: 's',
-  default: `.template.json`,
-}).argv;
+import jsonInjector from 'json-injector';
+import { defaultOptions } from 'schema/options';
+
+const { _: files = defaultOptions.files, suffix, file } = yargs
+  .option('file', { alias: 'f', default: defaultOptions.rcFile })
+  .option('suffix', {
+    alias: 's',
+    default: defaultOptions.suffix,
+  }).argv;
+
+jsonInjector({ files, suffix, rcFile: file });

@@ -1,0 +1,11 @@
+{
+  "extends": "../../.babelrc",
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
+  ]
+}
