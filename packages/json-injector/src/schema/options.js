@@ -2,7 +2,7 @@ import schema from 'schema';
 import { injectorsSchema as defaultInjectorOptions } from './injectors';
 
 export const defaultOptions = {
-  rcFile: 'json-inject.config.js',
+  rcFile: 'json-injector.config.js',
   files: null,
   suffix: 'template',
   injectors: defaultInjectorOptions,
@@ -18,7 +18,6 @@ export const optionSchema = {
       type: 'array',
       minItems: 1,
       items: { type: 'string' },
-      default: defaultOptions.files,
     },
     suffix: {
       type: 'string',

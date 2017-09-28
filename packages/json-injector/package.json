@@ -1,7 +1,7 @@
 {
   "name": "json-injector",
   "version": "0.0.1",
-  "main": "src/app.js",
+  "main": "index.js",
   "repository": "https://github.com/kimxogus/json-injector.git",
   "author": "kimxogus <kgyoo8232@gmail.com>",
   "license": "MIT",
@@ -18,5 +18,16 @@
     "fs-extra": "^4.0.2",
     "lodash": "^4.17.4",
     "yargs": "^9.0.1"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "json"],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]",
+      "^.+\\.config\\.js?$"
+    ]
   }
 }

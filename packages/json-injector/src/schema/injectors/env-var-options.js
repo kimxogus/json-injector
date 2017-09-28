@@ -2,7 +2,7 @@ import { isFunction } from 'lodash';
 
 import schema from 'schema';
 
-export const defaultOptions = null;
+export const defaultOptions = () => process.env;
 
 export const envVarOptionSchema = {
   typeof: ['object', 'function'],
