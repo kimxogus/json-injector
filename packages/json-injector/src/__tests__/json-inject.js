@@ -1,4 +1,4 @@
-import jsonInject from '../json-inject';
+import jsonInject from '../app';
 
 describe('', () => {
   it('', () => {
