@@ -11,6 +11,6 @@ describe('json-inject app', () => {
   });
 
   it("doesn't require files option if rcFileExists", () => {
-    jsonInject({ rcFile: '__tests__/json-injector.config.js' });
+    jsonInject({ rcFile: '__tests__/json-injector.config.js', verbose: true });
   });
 });

@@ -6,6 +6,7 @@ export const defaultOptions = {
   files: null,
   suffix: 'template',
   injectors: defaultInjectorOptions,
+  verbose: false,
 };
 
 export const optionSchema = {
@@ -22,6 +23,10 @@ export const optionSchema = {
     suffix: {
       type: 'string',
       default: defaultOptions.suffix,
+    },
+    verbose: {
+      type: 'boolean',
+      default: defaultOptions.verbose,
     },
   },
   required: ['files'],
