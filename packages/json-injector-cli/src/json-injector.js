@@ -2,7 +2,7 @@
 import yargs from 'yargs';
 
 import jsonInjector from 'json-injector';
-import { defaultOptions } from 'schema/options';
+import { defaultOptions } from 'json-injector/schema/options';
 
 const { _: files = defaultOptions.files, suffix, file } = yargs
   .option('file', { alias: 'f', default: defaultOptions.rcFile })

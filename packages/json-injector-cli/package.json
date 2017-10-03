@@ -1,0 +1,42 @@
+{
+  "name": "json-injector-cli",
+  "version": "0.1.0",
+  "repository": "https://github.com/kimxogus/json-injector.git",
+  "author": "kimxogus <kgyoo8232@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "json-injector": "lib/app.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf lib && babel ./src --out-dir ./lib --copy-files",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "json-injector": "^0.1.0",
+    "yargs": "^9.0.1"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
+    ],
+    "watchPathIgnorePatterns": [
+      "testConfig/.*.json",
+      "lib"
+    ]
+  }
+}
