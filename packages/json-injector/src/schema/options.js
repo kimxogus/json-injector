@@ -1,5 +1,8 @@
 import schema from 'schema';
-import { defaultOptions as defaultInjectorOptions } from './injectors';
+import {
+  injectorsSchema,
+  defaultOptions as defaultInjectorOptions,
+} from './injectors';
 
 export const defaultOptions = {
   rcFile: 'json-injector.config.js',
@@ -28,6 +31,7 @@ export const optionSchema = {
       type: 'boolean',
       default: defaultOptions.verbose,
     },
+    injectors: injectorsSchema,
   },
   required: ['files'],
 };

@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import { has, pick, assign, isEqual } from 'lodash';
+import injectEnv from 'inject-env';
 
 import schema from 'schema';
 import { validateOptions, defaultOptions, optionSchema } from 'schema/options';
@@ -41,7 +42,7 @@ const jsonInjector = (inputOptions = {}) => {
     );
   }
 
-  const { files, suffix, rcFile, verbose } = options;
+  const { files, suffix, rcFile, verbose, injectors } = options;
 
   if (verbose) {
     if (rcFileExists) {
@@ -56,14 +57,27 @@ const jsonInjector = (inputOptions = {}) => {
   if (verbose) console.log('Options:', options);
 
   files.forEach(file => {
-    const templateFilePath = path.resolve(cwd, `${file}.${suffix}`);
+    const templateFileName = `${file}.${suffix}`;
+    const templateFilePath = path.resolve(cwd, templateFileName);
     if (extensions.every(e => !fs.existsSync(`${templateFilePath}.${e}`))) {
       console.log('cannot find', templateFilePath);
       return;
     }
     console.log('processing', templateFilePath);
     const template = require(templateFilePath);
-    console.log(template);
+
+    const injected = injectEnv(
+      template,
+      injectors.reduce((a, b) => Object.assign(a, b()), {})
+    );
+    if (verbose) {
+      console.log('injected', templateFileName);
+      console.log(injected);
+    }
+
+    fs.writeJSONSync(path.resolve(cwd, `${file}.json`), injected, {
+      spaces: 2,
+    });
   });
 };
 

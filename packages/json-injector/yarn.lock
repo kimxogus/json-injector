@@ -111,9 +111,12 @@ hosted-git-info@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
-inject-env@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/inject-env/-/inject-env-0.2.0.tgz#5ba576ad42cead07a0d48653dc2494708b15a920"
+inject-env@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/inject-env/-/inject-env-0.5.0.tgz#38a3a96e959a759c7314294c40c55e4a32b19e18"
+  dependencies:
+    lodash.has "^4.5.2"
+    lodash.isplainobject "^4.0.6"
 
 invert-kv@^1.0.0:
   version "1.0.0"
@@ -188,6 +191,14 @@ locate-path@^2.0.0:
   dependencies:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
+
+lodash.has@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/lodash.has/-/lodash.has-4.5.2.tgz#d19f4dc1095058cccbe2b0cdf4ee0fe4aa37c862"
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
 
 lodash@^4.17.4:
   version "4.17.4"
