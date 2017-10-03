@@ -1,13 +1,15 @@
 {
   "name": "json-injector",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "lib/app.js",
   "repository": "https://github.com/kimxogus/json-injector.git",
   "author": "kimxogus <kgyoo8232@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rm -rf lib && babel ./src --out-dir ./lib --copy-files",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "ajv": "^5.2.3",
@@ -17,7 +19,7 @@
     "inject-env": "^0.6.1",
     "lodash": "^4.17.4"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": ["lib", "README.md", "LICENSE"],
   "jest": {
     "moduleFileExtensions": ["js", "json"],
     "testEnvironment": "node",
@@ -27,6 +29,6 @@
     "testPathIgnorePatterns": [
       "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
     ],
-    "watchPathIgnorePatterns": ["testConfig/.*.json"]
+    "watchPathIgnorePatterns": ["testConfig/.*.json", "lib"]
   }
 }

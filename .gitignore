@@ -2,4 +2,4 @@
 node_modules/
 *.log
 packages/json-injector/testConfig/test.json
-packages/**/dist
+packages/**/lib
