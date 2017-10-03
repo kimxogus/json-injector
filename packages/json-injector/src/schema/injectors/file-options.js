@@ -1,7 +1,6 @@
 import schema from 'schema';
 
 export const defaultOptions = {
-  patterns: ['*.json'],
   baseDir: process.cwd(),
 };
 
@@ -13,13 +12,13 @@ export const optionSchema = {
       items: {
         type: 'string',
       },
-      default: defaultOptions.patterns,
     },
     baseDir: {
       type: 'string',
       default: defaultOptions.baseDir,
     },
   },
+  required: ['patterns'],
 };
 
 schema.addSchema(optionSchema, 'file-options');

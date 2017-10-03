@@ -1,11 +1,14 @@
 import glob from 'glob';
 import path from 'path';
+import { defaults } from 'lodash';
 
-import { validateOptions } from 'schema/injectors/file-options';
+import { validateOptions, defaultOptions } from 'schema/injectors/file-options';
 
 export default options => () => {
   const valid = validateOptions(options);
   if (!valid) throw new Error(schema.errorsText());
+
+  options = defaults(options || {}, defaultOptions);
 
   const { patterns, baseDir } = options;
 
