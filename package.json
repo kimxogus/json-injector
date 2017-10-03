@@ -11,7 +11,7 @@
     "eslint": "^4.7.2",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-prettier": "^2.3.1",
-    "lerna": "^2.2.0",
+    "lerna": "^2.3.1",
     "prettier": "^1.7.0"
   }
 }
