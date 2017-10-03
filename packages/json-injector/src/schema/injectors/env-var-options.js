@@ -1,12 +1,16 @@
-import { isFunction } from 'lodash';
+import { isPlainObject } from 'lodash';
 
 import schema from 'schema';
 
-export const defaultOptions = () => process.env;
+export const defaultOptions = {};
 
 export const envVarOptionSchema = {
-  typeof: ['object', 'function'],
-  default: defaultOptions,
+  patternProperties: {
+    '^.*$': {
+      anyOf: [{ type: 'string' }, { type: 'number' }],
+    },
+  },
+  additionalProperties: false,
 };
 
 schema.addSchema(envVarOptionSchema, 'env-var-options');

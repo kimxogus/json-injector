@@ -5,7 +5,9 @@ import { has, pick, assign, isEqual } from 'lodash';
 import schema from 'schema';
 import { validateOptions, defaultOptions, optionSchema } from 'schema/options';
 
-export default (inputOptions = {}) => {
+const extensions = ['js', 'json'];
+
+const jsonInjector = (inputOptions = {}) => {
   let options = assign(defaultOptions, inputOptions);
 
   let cwd = process.cwd();
@@ -21,6 +23,12 @@ export default (inputOptions = {}) => {
     if (root === dir) {
       break;
     }
+  }
+  if (fs.existsSync(rcFilePath)) {
+    const { dir } = path.parse(rcFilePath);
+    cwd = dir;
+  } else {
+    cwd = process.cwd();
   }
 
   if (options.verbose) console.log(rcFileExists);
@@ -46,4 +54,17 @@ export default (inputOptions = {}) => {
   if (!validateOptions(options)) throw new Error(schema.errorsText());
 
   if (verbose) console.log('Options:', options);
+
+  files.forEach(file => {
+    const templateFilePath = path.resolve(cwd, `${file}.${suffix}`);
+    if (extensions.every(e => !fs.existsSync(`${templateFilePath}.${e}`))) {
+      console.log('cannot find', templateFilePath);
+      return;
+    }
+    console.log('processing', templateFilePath);
+    const template = require(templateFilePath);
+    console.log(template);
+  });
 };
+
+export default jsonInjector;
