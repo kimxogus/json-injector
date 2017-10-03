@@ -1,5 +1,5 @@
 import schema from 'schema';
-import { injectorsSchema as defaultInjectorOptions } from './injectors';
+import { defaultOptions as defaultInjectorOptions } from './injectors';
 
 export const defaultOptions = {
   rcFile: 'json-injector.config.js',

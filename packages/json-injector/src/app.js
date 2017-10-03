@@ -1,12 +1,12 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { defaults, has, pick, assign, isEqual } from 'lodash';
+import { has, pick, assign, isEqual } from 'lodash';
 
 import schema from 'schema';
 import { validateOptions, defaultOptions, optionSchema } from 'schema/options';
 
-export default (options = {}) => {
-  options = defaults(options, defaultOptions);
+export default (inputOptions = {}) => {
+  let options = assign(defaultOptions, inputOptions);
 
   let cwd = process.cwd();
   let rcFilePath = null;
@@ -23,15 +23,13 @@ export default (options = {}) => {
     }
   }
 
+  if (options.verbose) console.log(rcFileExists);
   if (rcFileExists) {
+    const optionKeys = Object.keys(optionSchema.properties);
     options = assign(
-      pick(require(rcFilePath), Object.keys(optionSchema.properties)),
-      Object.keys(options).reduce((a, b) => {
-        if (!isEqual(defaultOptions[b], options[b])) {
-          a[b] = options[b];
-        }
-        return a;
-      }, {})
+      options,
+      pick(require(rcFilePath), optionKeys),
+      pick(inputOptions, optionKeys)
     );
   }
 
@@ -43,8 +41,9 @@ export default (options = {}) => {
     } else {
       console.log('Not using config file.');
     }
-    console.log('Options:', options);
   }
 
   if (!validateOptions(options)) throw new Error(schema.errorsText());
+
+  if (verbose) console.log('Options:', options);
 };
