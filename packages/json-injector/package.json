@@ -6,9 +6,6 @@
   "author": "kimxogus <kgyoo8232@gmail.com>",
   "license": "MIT",
   "private": false,
-  "bin": {
-    "json-injector": "./dist/bin/json-injector.js"
-  },
   "scripts": {
     "test": "jest"
   },
@@ -17,15 +14,12 @@
     "ajv-keywords": "^2.1.0",
     "fs-extra": "^4.0.2",
     "glob": "^7.1.2",
-    "inject-env": "^0.5.0",
-    "lodash": "^4.17.4",
-    "yargs": "^9.0.1"
+    "inject-env": "^0.6.1",
+    "lodash": "^4.17.4"
   },
+  "files": ["dist", "README.md", "LICENSE"],
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["js", "json"],
     "testEnvironment": "node",
     "transform": {
       "^.+\\.js?$": "babel-jest"
@@ -33,8 +27,6 @@
     "testPathIgnorePatterns": [
       "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
     ],
-    "watchPathIgnorePatterns": [
-      "testConfig/.*.json"
-    ]
+    "watchPathIgnorePatterns": ["testConfig/.*.json"]
   }
 }

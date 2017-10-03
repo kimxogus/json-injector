@@ -65,10 +65,11 @@ const jsonInjector = (inputOptions = {}) => {
     console.log('processing', templateFilePath);
     const template = require(templateFilePath);
 
-    const injected = injectEnv(
-      template,
-      injectors.reduce((a, b) => Object.assign(a, b()), {})
-    );
+    const injected = injectEnv(template, {
+      defaultValue: '',
+      env: injectors.reduce((a, b) => Object.assign(a, b()), {}),
+    });
+
     if (verbose) {
       console.log('injected', templateFileName);
       console.log(injected);
