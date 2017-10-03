@@ -27,8 +27,7 @@
       "^.+\\.js?$": "babel-jest"
     },
     "testPathIgnorePatterns": [
-      "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]",
-      "^.+\\.(config|template)\\.js?$"
+      "[/\\\\](build|docs|node_modules|scripts|example|testConfig)[/\\\\]"
     ]
   }
 }
