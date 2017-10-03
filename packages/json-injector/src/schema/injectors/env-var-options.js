@@ -1,10 +1,8 @@
-import { isPlainObject } from 'lodash';
-
 import schema from 'schema';
 
 export const defaultOptions = {};
 
-export const envVarOptionSchema = {
+export const optionSchema = {
   patternProperties: {
     '^.*$': {
       anyOf: [{ type: 'string' }, { type: 'number' }],
@@ -13,7 +11,7 @@ export const envVarOptionSchema = {
   additionalProperties: false,
 };
 
-schema.addSchema(envVarOptionSchema, 'env-var-options');
+schema.addSchema(optionSchema, 'env-var-options');
 
 export const validateOptions = options =>
   schema.validate('env-var-options', options);
