@@ -32,7 +32,6 @@ const jsonInjector = (inputOptions = {}) => {
     cwd = process.cwd();
   }
 
-  if (options.verbose) console.log(rcFileExists);
   if (rcFileExists) {
     const optionKeys = Object.keys(optionSchema.properties);
     options = assign(
