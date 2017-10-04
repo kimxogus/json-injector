@@ -10,23 +10,20 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rm -rf lib && babel ./src --out-dir ./lib --copy-files",
+    "clean": "rm -rf lib",
+    "prebuild": "yarn clean",
+    "build": "babel ./src --out-dir ./lib --copy-files",
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "json-injector": "^0.1.0",
     "yargs": "^9.0.1"
   },
-  "files": [
-    "lib",
-    "README.md",
-    "LICENSE"
-  ],
+  "peerDependencies": {
+    "json-injector": "^0.1.0"
+  },
+  "files": ["lib", "README.md", "LICENSE"],
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["js", "json"],
     "testEnvironment": "node",
     "transform": {
       "^.+\\.js?$": "babel-jest"
@@ -34,9 +31,6 @@
     "testPathIgnorePatterns": [
       "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
     ],
-    "watchPathIgnorePatterns": [
-      "testConfig/.*.json",
-      "lib"
-    ]
+    "watchPathIgnorePatterns": ["testConfig/.*.json", "lib"]
   }
 }
