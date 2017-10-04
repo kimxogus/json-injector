@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { has, pick, assign, isEqual } from 'lodash';
+import { has, pick, assign, isEqual, isNil, pickBy } from 'lodash';
 import injectEnv from 'inject-env';
 
 import schema from 'schema';
@@ -37,7 +37,10 @@ const jsonInjector = (inputOptions = {}) => {
     options = assign(
       options,
       pick(require(rcFilePath), optionKeys),
-      pick(inputOptions, optionKeys)
+      pickBy(
+        inputOptions,
+        v => !isNil(v) && (Array.isArray(v) ? v.length : true)
+      )
     );
   }
 
@@ -81,4 +84,4 @@ const jsonInjector = (inputOptions = {}) => {
   });
 };
 
-export default jsonInjector;
+module.exports = jsonInjector;

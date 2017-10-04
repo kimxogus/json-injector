@@ -4,7 +4,7 @@ import { defaults } from 'lodash';
 
 import { validateOptions, defaultOptions } from 'schema/injectors/file-options';
 
-export default options => () => {
+module.exports = options => () => {
   const valid = validateOptions(options);
   if (!valid) throw new Error(schema.errorsText());
 

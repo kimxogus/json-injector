@@ -2,9 +2,9 @@
 import yargs from 'yargs';
 
 import jsonInjector from 'json-injector';
-import { defaultOptions } from 'json-injector/schema/options';
+import { defaultOptions } from 'json-injector/lib/schema/options';
 
-const { _: files = defaultOptions.files, suffix, file } = yargs
+const { _: files = defaultOptions.files, suffix, file, verbose } = yargs
   .option('file', {
     alias: 'f',
     default: defaultOptions.rcFile,
@@ -18,4 +18,4 @@ const { _: files = defaultOptions.files, suffix, file } = yargs
     default: defaultOptions.verbose,
   }).argv;
 
-jsonInjector({ files, suffix, rcFile: file });
+jsonInjector({ files, suffix, rcFile: file, verbose });

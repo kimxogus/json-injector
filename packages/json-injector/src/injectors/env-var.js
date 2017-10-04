@@ -5,7 +5,7 @@ import {
   defaultOptions,
 } from 'schema/injectors/env-var-options';
 
-export default (options = defaultOptions) => () => {
+module.exports = (options = defaultOptions) => () => {
   const valid = validateOptions(options);
   if (!valid) throw new Error(schema.errorsText());
 

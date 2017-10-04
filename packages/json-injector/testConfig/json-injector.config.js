@@ -1,4 +1,4 @@
-import envVarInjector from 'injectors/env-var';
+const envVarInjector = require('../lib/injectors/env-var');
 
 // test config
 

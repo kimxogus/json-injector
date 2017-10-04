@@ -4,4 +4,4 @@ import AjvKeywords from 'ajv-keywords';
 const schema = new Ajv();
 AjvKeywords(schema);
 
-export default schema;
+module.exports = schema;

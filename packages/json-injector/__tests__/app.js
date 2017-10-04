@@ -16,4 +16,12 @@ describe('json-inject app', () => {
       verbose: true,
     });
   });
+
+  it("doesn't require files option if rcFileExists", () => {
+    jsonInject({
+      files: [],
+      rcFile: 'testConfig/json-injector.config.js',
+      verbose: true,
+    });
+  });
 });
