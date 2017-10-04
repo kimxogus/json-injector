@@ -1,7 +1,8 @@
+# json-injector
+> inject variables from environment variables or js/json files to json
+
 [![NPM version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][npm-url]
-
-# json-injector
 
 [Github](https://github.com/kimxogus/json-injector)
 

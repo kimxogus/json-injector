@@ -1,8 +1,8 @@
-[![NPM version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][npm-url]
-
 # json-injector-cli
 > cli app for json-injector
+
+[![NPM version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][npm-url]
 
 [Github](https://github.com/kimxogus/json-injector)
 
