@@ -1,5 +1,6 @@
 {
   "name": "json-injector-cli",
+  "description": "CLI app for json-injector",
   "version": "0.2.0",
   "repository": "https://github.com/kimxogus/json-injector.git",
   "author": "kimxogus <kgyoo8232@gmail.com>",
@@ -21,16 +22,9 @@
   "peerDependencies": {
     "json-injector": "^0.1.0 || ^0.2.0"
   },
-  "files": [
-    "lib",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["lib", "README.md", "LICENSE"],
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["js", "json"],
     "testEnvironment": "node",
     "transform": {
       "^.+\\.js?$": "babel-jest"
@@ -38,9 +32,6 @@
     "testPathIgnorePatterns": [
       "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
     ],
-    "watchPathIgnorePatterns": [
-      "testConfig/.*.json",
-      "lib"
-    ]
+    "watchPathIgnorePatterns": ["testConfig/.*.json", "lib"]
   }
 }
