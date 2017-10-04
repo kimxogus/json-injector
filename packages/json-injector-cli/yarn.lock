@@ -190,9 +190,9 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
 
-json-injector@0.2.0-next.715f9430:
-  version "0.2.0-next.715f9430"
-  resolved "https://registry.yarnpkg.com/json-injector/-/json-injector-0.2.0-next.715f9430.tgz#a50eec3877b721c1ad96b1767613d2cc2023a480"
+json-injector@0.2.0-next.4e029592:
+  version "0.2.0-next.4e029592"
+  resolved "https://registry.yarnpkg.com/json-injector/-/json-injector-0.2.0-next.4e029592.tgz#fba4ad05ad285e211722e0161a914c04b674420c"
   dependencies:
     ajv "^5.2.3"
     ajv-keywords "^2.1.0"
