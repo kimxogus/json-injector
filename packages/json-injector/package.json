@@ -19,7 +19,7 @@
     "ajv-keywords": "^2.1.0",
     "fs-extra": "^4.0.2",
     "glob": "^7.1.2",
-    "inject-env": "^0.6.1",
+    "inject-env": "^0.7.3",
     "lodash": "^4.17.4"
   },
   "files": [
