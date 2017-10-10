@@ -19,6 +19,8 @@ describe('file-injector', () => {
       baseDir: testConfigPath,
     });
 
-    inject();
+    expect(inject()).toEqual(
+      require(`${testConfigPath}/config/sampleCredential.json`)
+    );
   });
 });

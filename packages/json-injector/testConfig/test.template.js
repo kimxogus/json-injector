@@ -1,4 +1,4 @@
 module.exports = {
-  testVar: '${testVar:defaultValue}',
+  testVar: '${testVar:-defaultValue}',
   home: '${home}',
 };

@@ -10,6 +10,7 @@ export const defaultOptions = {
   suffix: 'template',
   injectors: defaultInjectorOptions,
   verbose: false,
+  silent: false,
 };
 
 export const optionSchema = {
@@ -30,6 +31,10 @@ export const optionSchema = {
     verbose: {
       type: 'boolean',
       default: defaultOptions.verbose,
+    },
+    silent: {
+      type: 'boolean',
+      default: defaultOptions.silent,
     },
     injectors: injectorsSchema,
   },

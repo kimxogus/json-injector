@@ -44,9 +44,9 @@ const jsonInjector = (inputOptions = {}) => {
     );
   }
 
-  const { files, suffix, rcFile, verbose, injectors } = options;
+  const { files, suffix, rcFile, verbose, injectors, silent } = options;
 
-  if (verbose) {
+  if (verbose && !silent) {
     if (rcFileExists) {
       console.log('Using config file', rcFilePath);
     } else {
@@ -56,16 +56,22 @@ const jsonInjector = (inputOptions = {}) => {
 
   if (!validateOptions(options)) throw new Error(schema.errorsText());
 
-  if (verbose) console.log('Options:', options);
+  if (verbose && !silent) {
+    console.log('Options:', options);
+  }
 
   files.forEach(file => {
     const templateFileName = `${file}.${suffix}`;
     const templateFilePath = path.resolve(cwd, templateFileName);
     if (extensions.every(e => !fs.existsSync(`${templateFilePath}.${e}`))) {
-      console.log('cannot find', templateFilePath);
+      if (!silent) {
+        console.log('cannot find', templateFilePath);
+      }
       return;
     }
-    console.log('processing', templateFilePath);
+    if (!silent) {
+      console.log('processing', templateFilePath);
+    }
     const template = require(templateFilePath);
 
     const injected = injectEnv(template, {
@@ -73,7 +79,7 @@ const jsonInjector = (inputOptions = {}) => {
       env: injectors.reduce((a, b) => Object.assign(a, b()), {}),
     });
 
-    if (verbose) {
+    if (verbose && !silent) {
       console.log('injected', templateFileName);
       console.log(injected);
     }
