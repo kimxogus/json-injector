@@ -1,7 +1,7 @@
 {
   "name": "json-injector",
   "description": "Inject variables from environment variables or js/json files to json",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "lib/app.js",
   "repository": "https://github.com/kimxogus/json-injector.git",
   "author": "kimxogus <kgyoo8232@gmail.com>",
