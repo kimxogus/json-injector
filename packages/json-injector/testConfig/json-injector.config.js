@@ -7,5 +7,6 @@ module.exports = {
   injectors: [envVarInjector({ TEST_VAR: 'testVar', HOME: 'home' })],
   postInject: {
     number: v => +v,
+    'a.b[0]': v => console.log(v),
   },
 };
