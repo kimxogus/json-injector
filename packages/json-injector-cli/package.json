@@ -17,19 +17,12 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "json-injector": "^0.3.0",
+    "json-injector": "^0.4.0",
     "yargs": "^9.0.1"
   },
-  "files": [
-    "lib",
-    "README.md",
-    "LICENSE"
-  ],
+  "files": ["lib", "README.md", "LICENSE"],
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": ["js", "json"],
     "testEnvironment": "node",
     "transform": {
       "^.+\\.js?$": "babel-jest"
@@ -37,9 +30,6 @@
     "testPathIgnorePatterns": [
       "[/\\\\](build|docs|node_modules|scripts|example)[/\\\\]"
     ],
-    "watchPathIgnorePatterns": [
-      "testConfig/.*.json",
-      "lib"
-    ]
+    "watchPathIgnorePatterns": ["testConfig/.*.json", "lib"]
   }
 }
