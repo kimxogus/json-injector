@@ -5,4 +5,7 @@ const envVarInjector = require('../lib/injectors/env-var');
 module.exports = {
   files: ['test'],
   injectors: [envVarInjector({ TEST_VAR: 'testVar', HOME: 'home' })],
+  postInject: {
+    number: v => +v,
+  },
 };

@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { has, pick, assign, isEqual, isNil, pickBy } from 'lodash';
+import { has, pick, assign, isEqual, isNil, pickBy, set, get } from 'lodash';
 import injectEnv from 'inject-env';
 
 import schema from 'schema';
@@ -44,7 +44,15 @@ const jsonInjector = (inputOptions = {}) => {
     );
   }
 
-  const { files, suffix, rcFile, verbose, injectors, silent } = options;
+  const {
+    files,
+    suffix,
+    rcFile,
+    verbose,
+    injectors,
+    silent,
+    postInject,
+  } = options;
 
   if (verbose && !silent) {
     if (rcFileExists) {
@@ -74,10 +82,23 @@ const jsonInjector = (inputOptions = {}) => {
     }
     const template = require(templateFilePath);
 
-    const injected = injectEnv(template, {
+    let injected = injectEnv(template, {
       defaultValue: '',
       env: injectors.reduce((a, b) => Object.assign(a, b()), {}),
     });
+
+    if (postInject) {
+      if (verbose && !silent) {
+        console.log('inject postprocessing...');
+      }
+
+      injected = Object.keys(postInject).reduce((postProcessed, key) => {
+        if (key && has(postProcessed, key)) {
+          set(postProcessed, key, postInject[key](get(postProcessed, key)));
+        }
+        return postProcessed;
+      }, injected);
+    }
 
     if (verbose && !silent) {
       console.log('injected', templateFileName);

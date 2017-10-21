@@ -9,6 +9,7 @@ export const defaultOptions = {
   files: null,
   suffix: 'template',
   injectors: defaultInjectorOptions,
+  postInject: null,
   verbose: false,
   silent: false,
 };
@@ -37,6 +38,9 @@ export const optionSchema = {
       default: defaultOptions.silent,
     },
     injectors: injectorsSchema,
+    postInject: {
+      default: defaultOptions.postInject,
+    },
   },
   required: ['files'],
 };
