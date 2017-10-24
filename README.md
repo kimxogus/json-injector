@@ -1,6 +1,12 @@
 # json-injector
 > Inject variables from environment variables or js/json files to json
 
+## Packages
+| Name | Version | Downloads |
+| --- | --- | --- |
+| [json-injector](https://npmjs/packages/json-injector) | [![NPM version][json-injector-npm-image]][json-injector-npm-url] | [![NPM Downloads][json-injector-downloads-image]][json-injector-npm-url] |
+| [json-injector-cli](https://npmjs/packages/json-injector-cli) | [![NPM version][json-injector-cli-npm-image]][json-injector-cli-npm-url] | [![NPM Downloads][json-injector-cli-downloads-image]][json-injector-cli-npm-url] |
+
 ## install
 - npm
 ```bash
@@ -102,3 +108,11 @@ fileInjector({
   patterns: ['config/*.json', 'config/*.js'], // file's patterns (relative to baseDir)
 });
 ```
+
+[json-injector-npm-image]: https://img.shields.io/npm/v/json-injector.svg?style=flat-square
+[json-injector-npm-url]: https://www.npmjs.com/package/json-injector
+[json-injector-downloads-image]: https://img.shields.io/npm/dm/json-injector.svg
+
+[json-injector-cli-npm-image]: https://img.shields.io/npm/v/json-injector-cli.svg?style=flat-square
+[json-injector-cli-npm-url]: https://www.npmjs.com/package/json-injector-cli
+[json-injector-cli-downloads-image]: https://img.shields.io/npm/dm/json-injector-cli.svg
