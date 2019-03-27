@@ -1,4 +1,3 @@
-import path from 'path';
 import jsonInject from 'app';
 
 describe('json-inject app', () => {

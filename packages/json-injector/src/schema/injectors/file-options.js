@@ -2,6 +2,7 @@ import schema from 'schema';
 
 export const defaultOptions = {
   baseDir: process.cwd(),
+  verbose: false,
 };
 
 export const optionSchema = {
@@ -16,6 +17,10 @@ export const optionSchema = {
     baseDir: {
       type: 'string',
       default: defaultOptions.baseDir,
+    },
+    verbose: {
+      type: 'boolean',
+      default: defaultOptions.verbose,
     },
   },
   required: ['patterns'],
