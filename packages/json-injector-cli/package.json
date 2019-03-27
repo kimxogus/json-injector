@@ -10,11 +10,12 @@
     "json-injector": "lib/app.js"
   },
   "scripts": {
+    "pretest": "yarn build",
     "test": "jest",
     "clean": "rm -rf lib",
     "prebuild": "yarn clean",
     "build": "babel ./src --out-dir ./lib --copy-files",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn test"
   },
   "dependencies": {
     "json-injector": "^0.5.0",
