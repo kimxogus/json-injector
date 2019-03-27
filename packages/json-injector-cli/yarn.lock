@@ -215,10 +215,10 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
 
-json-injector@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/json-injector/-/json-injector-0.4.0.tgz#b9716db548df6e3ba2d6dd2aa35b3f3b2e75a656"
-  integrity sha512-hvoPlIPw/HuFHQd0Q8JIY+d84Ebpj4WBGpMfYgK/O9bso0eOE7+YA9lA1/KyfYfoZu4OZjW4f43i+pRkDreyIA==
+json-injector@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/json-injector/-/json-injector-0.5.0.tgz#41af75b262ecc71c8b2b559eaa544e4b79b20f0e"
+  integrity sha512-ofVFYOa54Y8hufQZrPPH1XzuBFT2SVIPp8GAvItGqA9rC3//BCuWaNQ8JpMjh5zDjk04mHiWeAlWOkPVX6RgaQ==
   dependencies:
     ajv "^5.2.3"
     ajv-keywords "^2.1.0"

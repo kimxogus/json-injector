@@ -17,7 +17,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "json-injector": "^0.4.0",
+    "json-injector": "^0.5.0",
     "yargs": "^9.0.1"
   },
   "files": [
