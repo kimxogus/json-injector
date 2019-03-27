@@ -84,7 +84,7 @@ const jsonInjector = (inputOptions = {}) => {
 
     let injected = injectEnv(template, {
       defaultValue: '',
-      env: injectors.reduce((a, b) => Object.assign(a, b()), {}),
+      env: injectors.reduce((a, b) => Object.assign(a, b(file)), {}),
     });
 
     if (postInject) {

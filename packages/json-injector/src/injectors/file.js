@@ -4,7 +4,7 @@ import { defaults } from 'lodash';
 
 import { validateOptions, defaultOptions } from 'schema/injectors/file-options';
 
-module.exports = options => () => {
+module.exports = options => file => {
   const valid = validateOptions(options);
   if (!valid) throw new Error(schema.errorsText());
 
@@ -19,7 +19,9 @@ module.exports = options => () => {
   }
 
   const jsonFile = patterns
-    .map(pattern => glob.sync(pattern, { cwd: baseDir }))
+    .map(pattern =>
+      glob.sync(pattern.replace('{file}', file), { cwd: baseDir })
+    )
     .map(jsonFiles => {
       if (verbose) {
         console.log(`fileInjector: json files are ${jsonFiles.join(', ')}`);

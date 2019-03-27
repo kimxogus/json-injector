@@ -11,8 +11,10 @@ module.exports = (options = defaultOptions) => () => {
 
   options = defaults(options || {}, defaultOptions);
 
-  return Object.keys(options).reduce((a, b) => {
-    a[options[b]] = process.env[b];
-    return a;
-  }, {});
+  return {
+    env: Object.keys(options).reduce((a, b) => {
+      a[options[b]] = process.env[b];
+      return a;
+    }, {}),
+  };
 };
