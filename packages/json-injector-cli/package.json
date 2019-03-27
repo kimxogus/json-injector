@@ -1,7 +1,7 @@
 {
   "name": "json-injector-cli",
   "description": "CLI app for json-injector",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "repository": "https://github.com/kimxogus/json-injector.git",
   "author": "kimxogus <kgyoo8232@gmail.com>",
   "license": "MIT",
