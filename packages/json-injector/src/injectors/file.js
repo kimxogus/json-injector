@@ -19,9 +19,15 @@ module.exports = options => file => {
   }
 
   const jsonFile = patterns
-    .map(pattern =>
-      glob.sync(pattern.replace('{file}', file), { cwd: baseDir })
-    )
+    .map(pattern => {
+      const p = file ? pattern.replace('{file}', path.basename(file)) : pattern;
+      if (verbose) {
+        console.log(`fileInjector: search for files with pattern ${p}`);
+      }
+      return glob.sync(p, {
+        cwd: baseDir,
+      });
+    })
     .map(jsonFiles => {
       if (verbose) {
         console.log(`fileInjector: json files are ${jsonFiles.join(', ')}`);
